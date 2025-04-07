@@ -2,9 +2,11 @@ package com.nego.zawadimart.ui.screens.about
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun AboutScreen(){
+fun AboutScreen(navController: NavController){
 
 }
 
@@ -12,5 +14,5 @@ fun AboutScreen(){
 @Composable
 fun AboutScreenPreview(){
 
-    AboutScreen()
+    AboutScreen(rememberNavController())
 }
