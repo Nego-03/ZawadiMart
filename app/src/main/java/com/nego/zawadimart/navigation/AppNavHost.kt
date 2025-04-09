@@ -11,6 +11,7 @@ import com.nego.zawadimart.ui.screens.dashboard.DashboardScreen
 import com.nego.zawadimart.ui.screens.home.HomeScreen
 import com.nego.zawadimart.ui.screens.intent.IntentScreen
 import com.nego.zawadimart.ui.screens.item.ItemScreen
+import com.nego.zawadimart.ui.screens.service.ServiceScreen
 import com.nego.zawadimart.ui.screens.start.StartScreen
 
 @Composable
@@ -43,6 +44,10 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
+        }
+
+        composable(ROUT_SERVICE) {
+            ServiceScreen(navController)
         }
     }
 }

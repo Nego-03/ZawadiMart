@@ -2,6 +2,7 @@ package com.nego.zawadimart.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
@@ -39,6 +42,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.nego.zawadimart.R
+import com.nego.zawadimart.navigation.ROUT_ABOUT
+import com.nego.zawadimart.navigation.ROUT_HOME
+import com.nego.zawadimart.navigation.ROUT_ITEM
 import com.nego.zawadimart.ui.theme.newOrange
 import com.nego.zawadimart.ui.theme.newWhite
 
@@ -46,7 +52,11 @@ import com.nego.zawadimart.ui.theme.newWhite
 @Composable
 fun DashboardScreen(navController: NavController){
 
-    Column(modifier = Modifier.fillMaxSize().background(newOrange)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(newOrange)
+        .verticalScroll(rememberScrollState()
+    )) {
         //box
         Box() {
            //Card
@@ -99,7 +109,10 @@ fun DashboardScreen(navController: NavController){
 
             //Card 1
             Card(
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable { navController.navigate(ROUT_HOME) }
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -117,11 +130,14 @@ fun DashboardScreen(navController: NavController){
 
             //End of Card 1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
             //Card 2
             Card(
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable { navController.navigate(ROUT_ABOUT) }
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -165,11 +181,14 @@ fun DashboardScreen(navController: NavController){
 
             //End of Card 1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
             //Card 2
             Card(
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable { navController.navigate(ROUT_ITEM) }
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
