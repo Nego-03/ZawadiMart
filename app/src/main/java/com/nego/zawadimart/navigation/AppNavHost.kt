@@ -9,10 +9,12 @@ import androidx.navigation.compose.rememberNavController
 import com.nego.zawadimart.ui.screens.about.AboutScreen
 import com.nego.zawadimart.ui.screens.crypto.CryptoScreen
 import com.nego.zawadimart.ui.screens.dashboard.DashboardScreen
+import com.nego.zawadimart.ui.screens.form.FormScreen
 import com.nego.zawadimart.ui.screens.home.HomeScreen
 import com.nego.zawadimart.ui.screens.intent.IntentScreen
 import com.nego.zawadimart.ui.screens.item.ItemScreen
 import com.nego.zawadimart.ui.screens.service.ServiceScreen
+import com.nego.zawadimart.ui.screens.signup.SignupScreen
 import com.nego.zawadimart.ui.screens.splash.SplashScreen
 import com.nego.zawadimart.ui.screens.start.StartScreen
 
@@ -57,6 +59,14 @@ fun AppNavHost(
         }
         composable(ROUT_CRYPTO) {
             CryptoScreen(navController)
+        }
+
+        composable(ROUT_FORM) {
+            FormScreen(navController)
+        }
+
+        composable(ROUT_SIGNUP) {
+            SignupScreen(navController)
         }
 
 

@@ -3,6 +3,7 @@ package com.nego.zawadimart.ui.screens.crypto
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -57,7 +59,9 @@ import androidx.navigation.compose.rememberNavController
 import com.nego.zawadimart.R
 import com.nego.zawadimart.navigation.ROUT_ABOUT
 import com.nego.zawadimart.navigation.ROUT_HOME
+import com.nego.zawadimart.ui.theme.neOrange
 import com.nego.zawadimart.ui.theme.newBlue
+import com.nego.zawadimart.ui.theme.newGreen
 import com.nego.zawadimart.ui.theme.newOrange
 import com.nego.zawadimart.ui.theme.newWhite
 
@@ -154,7 +158,7 @@ fun CryptoScreen(navController: NavController){
                     Spacer(modifier = Modifier.height(30.dp))
 
                     //Row
-                    Row( ) {
+                    Row( modifier = Modifier.horizontalScroll(rememberScrollState()) ) {
 
                         //Card 1
                         Card(
@@ -177,31 +181,50 @@ fun CryptoScreen(navController: NavController){
 
                         //End of Card 1
 
-                        Spacer(modifier = Modifier.width(40.dp))
+                        Spacer(modifier = Modifier.width(20.dp))
 
                         //Card 2
                         Card(
                             modifier = Modifier
                                 .width(150.dp)
                                 .height(250.dp)
-                                .clickable { navController.navigate(ROUT_ABOUT) }
+                                .clickable { navController.navigate(ROUT_HOME) }
+
+
                         ) {
                             Column(
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize().background(neOrange),
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
                             ) {
-                                Image(
-                                    painter = painterResource(R.drawable.about),
-                                    contentDescription = "home",
-                                    modifier = Modifier.size(100.dp)
-                                )
-                                Text(text = "About", fontSize = 15.sp)
+                                Text(text = "Cryptocurrency", fontSize = 15.sp,)
+                                Text(text = "Landing Page", fontSize = 15.sp)
                             }
                         }
 
                         //End of Card 2
+                        Spacer(modifier = Modifier.width(20.dp))
 
+                        //Card 2
+                        Card(
+                            modifier = Modifier
+                                .width(150.dp)
+                                .height(250.dp)
+                                .clickable { navController.navigate(ROUT_HOME) }
+
+
+                        ) {
+                            Column(
+                                modifier = Modifier.fillMaxSize().background(newGreen),
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center
+                            ) {
+                                Text(text = "Cryptocurrency", fontSize = 15.sp,)
+                                Text(text = "Landing Page", fontSize = 15.sp)
+                            }
+                        }
+
+                        //End of Card 2
                     }
                     //End of Row
                 }
