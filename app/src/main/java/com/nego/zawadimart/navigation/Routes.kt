@@ -11,3 +11,7 @@ const val ROUT_SPLASH = "splash"
 const val ROUT_CRYPTO = "crypto"
 const val ROUT_FORM = "form"
 const val ROUT_SIGNUP = "signup"
+
+//Authentication
+const val ROUT_REGISTER = "Register"
+const val ROUT_LOGIN = "Login"
