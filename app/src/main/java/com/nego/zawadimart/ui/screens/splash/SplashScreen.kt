@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.nego.zawadimart.R
+import com.nego.zawadimart.navigation.ROUT_LOGIN
 import com.nego.zawadimart.navigation.ROUT_START
 import com.nego.zawadimart.ui.theme.newOrange
 import kotlinx.coroutines.delay
@@ -31,7 +32,7 @@ fun SplashScreen(@SuppressLint("CoroutineCreationDuringComposition") navControll
     val coroutine = rememberCoroutineScope()
     coroutine.launch {
         delay(2000)
-        navController.navigate(ROUT_START)
+        navController.navigate(ROUT_LOGIN)
 
     }
 
